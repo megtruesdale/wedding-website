@@ -68,17 +68,17 @@
   /* ---------- page heading ---------- */
   .pageheading{ display:flex; flex-direction:column; align-items:center;
     margin:0 auto clamp(1.7rem,4.8vw,2.5rem); max-width:min(94vw,780px); }
-  .ph-eyebrow{ font-family:var(--font-util); font-weight:400; font-size:clamp(.6rem,2.4vw,.82rem);
+  .ph-eyebrow{ font-family:var(--font-util); font-weight:400; font-size:clamp(0.72rem,2.88vw,0.984rem);
     letter-spacing:.26em; text-transform:uppercase; color:var(--accent-hi); transition:color .5s ease;
     margin-bottom:clamp(.75rem,2.6vw,1.15rem); max-width:26ch; line-height:1.5; text-wrap:balance; }
   .ph-names{ display:flex; flex-direction:column; align-items:center; line-height:1.0; }
   .ph-name{ font-family:var(--font-display); font-optical-sizing:auto; font-weight:600;
-    font-size:clamp(2rem,8.5vw,3.7rem); letter-spacing:-.012em; padding:.02em .06em .08em;
+    font-size:clamp(2.4rem,10.2vw,4.44rem); letter-spacing:-.012em; padding:.02em .06em .08em;
     background:linear-gradient(92deg,#DCB25A 0%,#F6E4A8 44%,#DCB25A 70%,#F6E4A8 100%); background-size:220% 100%;
     -webkit-background-clip:text; background-clip:text; color:transparent; -webkit-text-fill-color:transparent;
     animation:sheen 9s ease-in-out infinite; }
   .ph-amp{ font-family:var(--font-display); font-style:italic; font-weight:500;
-    font-size:clamp(1.15rem,4.4vw,1.9rem); line-height:1; margin:.05em 0 .04em;
+    font-size:clamp(1.38rem,5.28vw,2.28rem); line-height:1; margin:.05em 0 .04em;
     background:linear-gradient(92deg,#E9A7B4,#F3C9D1); -webkit-background-clip:text; background-clip:text;
     color:transparent; -webkit-text-fill-color:transparent; }
   @keyframes sheen{ 0%,100%{ background-position:0% 50%; } 50%{ background-position:100% 50%; } }
@@ -124,7 +124,7 @@
   .slide-cap{ min-height:1.7em; margin-top:1.2rem; text-align:center; transition:opacity .3s ease; }
   .slide-cap.fade{ opacity:0; }
   .slide-cap .name{ font-family:var(--font-display); font-weight:500; font-style:normal;
-    font-size:clamp(1.15rem,4.6vw,1.6rem); letter-spacing:.02em; color:var(--accent-hi);
+    font-size:clamp(1.38rem,5.52vw,1.92rem); letter-spacing:.02em; color:var(--accent-hi);
     transition:color .5s ease; }
 
   .dots{ display:flex; gap:.55rem; margin-top:1rem; justify-content:center; }
@@ -135,7 +135,7 @@
 
   /* ---------- countdown ---------- */
   .cd-label{
-    font-family:var(--font-util); font-weight:400; font-size:clamp(.6rem,2.4vw,.7rem);
+    font-family:var(--font-util); font-weight:400; font-size:clamp(0.72rem,2.88vw,0.84rem);
     letter-spacing:.32em; text-transform:uppercase; color:var(--muted);
     margin:clamp(2.4rem,7vw,3.4rem) 0 clamp(.9rem,2.8vw,1.2rem);
   }
@@ -143,26 +143,38 @@
   .unit{ display:flex; flex-direction:column; align-items:center; min-width:clamp(3.2rem,15vw,4.6rem); }
   .unit .num{
     font-family:var(--font-display); font-optical-sizing:auto; font-weight:600;
-    font-size:clamp(2rem,9vw,3.1rem); line-height:1; color:var(--accent-hi);
+    font-size:clamp(2.4rem,10.8vw,3.72rem); line-height:1; color:var(--accent-hi);
     font-variant-numeric:tabular-nums; letter-spacing:.01em; transition:color .5s ease;
   }
-  .unit .cap{ font-family:var(--font-util); font-weight:400; font-size:clamp(.56rem,2.2vw,.66rem);
+  .unit .cap{ font-family:var(--font-util); font-weight:400; font-size:clamp(0.672rem,2.64vw,0.792rem);
     letter-spacing:.24em; text-transform:uppercase; color:var(--muted); margin-top:.55rem; }
-  .cd-sep{ font-family:var(--font-display); font-size:clamp(1.4rem,6vw,2.2rem); color:var(--muted);
+  .cd-sep{ font-family:var(--font-display); font-size:clamp(1.68rem,7.2vw,2.64rem); color:var(--muted);
     line-height:1; margin-top:.15em; opacity:.5; }
   .cd-done{ font-family:var(--font-display); font-style:italic; font-weight:500;
-    font-size:clamp(1.4rem,6vw,2.1rem); color:var(--accent-hi); }
+    font-size:clamp(1.68rem,7.2vw,2.52rem); color:var(--accent-hi); }
+  .more-soon{ display:flex; align-items:center; justify-content:center; gap:clamp(.8rem,3vw,1.2rem);
+    width:min(560px,88%); margin:clamp(1.6rem,5vw,2.4rem) auto 0; }
+  .more-soon .ms-text{ font-family:var(--font-display); font-style:italic; font-weight:500;
+    font-size:clamp(1.62rem,6.48vw,2.28rem); line-height:1.2; letter-spacing:.01em;
+    color:var(--accent-hi); transition:color .5s ease; white-space:nowrap;
+    text-shadow:0 0 24px var(--glow); }
+  .more-soon .ms-line{ flex:1; height:1px; position:relative;
+    background:linear-gradient(90deg, transparent, var(--frame)); }
+  .more-soon .ms-line.flip{ background:linear-gradient(90deg, var(--frame), transparent); }
+  .more-soon .ms-line::after{ content:"✦"; position:absolute; top:50%; transform:translateY(-52%);
+    right:-0.1em; font-size:0.72rem; color:var(--accent); transition:color .5s ease; }
+  .more-soon .ms-line.flip::after{ right:auto; left:-0.1em; }
 
   /* ---------- details / where to stay ---------- */
   .details{ width:100%; max-width:660px; margin:clamp(2.6rem,8vw,3.8rem) auto 0; }
-  .det-eyebrow{ font-family:var(--font-util); font-weight:400; font-size:clamp(.6rem,2.4vw,.7rem);
+  .det-eyebrow{ font-family:var(--font-util); font-weight:400; font-size:clamp(0.72rem,2.88vw,0.84rem);
     letter-spacing:.32em; text-transform:uppercase; color:var(--muted); margin-bottom:1rem; }
 
   .tabs{ position:relative; display:flex; gap:.25rem; padding:.32rem; border-radius:999px;
     border:1px solid var(--frame); background:rgba(255,255,255,.03); max-width:520px; margin:0 auto;
     transition:border-color .5s ease; }
   .tab{ flex:1 1 0; min-width:0; font-family:var(--font-util); font-weight:400;
-    font-size:clamp(.7rem,2.7vw,.86rem); letter-spacing:.01em; color:var(--muted);
+    font-size:clamp(0.84rem,3.24vw,1.032rem); letter-spacing:.01em; color:var(--muted);
     background:none; border:0; cursor:pointer; padding:.62rem .3rem; border-radius:999px;
     position:relative; z-index:2; white-space:nowrap; transition:color .3s ease; -webkit-tap-highlight-color:transparent; }
   .tab[aria-selected="true"]{ color:#1a1420; }
@@ -175,29 +187,29 @@
   .std-frame{ max-width:400px; margin:0 auto 1.4rem; border:1px solid var(--frame); border-radius:8px;
     overflow:hidden; background:#fff; box-shadow:0 22px 46px -22px rgba(0,0,0,.7); transition:border-color .5s ease; }
   .std-frame img{ display:block; width:100%; height:auto; }
-  .det-lede{ font-family:var(--font-util); font-weight:300; font-size:clamp(.94rem,3vw,1.04rem);
+  .det-lede{ font-family:var(--font-util); font-weight:300; font-size:clamp(1.128rem,3.6vw,1.248rem);
     color:var(--muted); line-height:1.55; max-width:46ch; margin:0 auto 1.5rem; }
   .resorts{ display:flex; flex-direction:column; gap:.7rem; margin-bottom:.9rem; }
   .resort{ display:flex; align-items:center; justify-content:space-between; gap:1rem; text-align:left;
     padding:.9rem 1.2rem; border:1px solid var(--frame); border-radius:12px; background:rgba(255,255,255,.03);
     transition:border-color .5s ease; }
-  .resort .rname{ font-family:var(--font-display); font-weight:500; font-size:clamp(1rem,3.6vw,1.18rem); color:var(--ivory); }
+  .resort .rname{ font-family:var(--font-display); font-weight:500; font-size:clamp(1.2rem,4.32vw,1.416rem); color:var(--ivory); }
   .resort .rrate{ font-family:var(--font-display); font-weight:600; white-space:nowrap; text-align:right;
-    font-size:clamp(1.05rem,3.4vw,1.25rem); color:var(--accent-hi); transition:color .5s ease; }
+    font-size:clamp(1.26rem,4.08vw,1.5rem); color:var(--accent-hi); transition:color .5s ease; }
   .resort .rrate small{ display:block; font-family:var(--font-util); font-weight:300; font-size:.52em;
     letter-spacing:.14em; text-transform:uppercase; color:var(--muted); margin-top:.15em; }
-  .det-fine{ font-family:var(--font-util); font-weight:300; font-size:.78rem; color:var(--muted); margin-bottom:1.5rem; }
+  .det-fine{ font-family:var(--font-util); font-weight:300; font-size:0.936rem; color:var(--muted); margin-bottom:1.5rem; }
   .book-row{ display:flex; flex-wrap:wrap; gap:.8rem 1rem; align-items:center; justify-content:center; }
-  a.book-btn{ font-family:var(--font-util); font-weight:500; font-size:.92rem; letter-spacing:.05em;
+  a.book-btn{ font-family:var(--font-util); font-weight:500; font-size:1.104rem; letter-spacing:.05em;
     color:#1a1420; text-decoration:none; border-radius:999px; padding:.82rem 1.5rem;
     background:linear-gradient(180deg,var(--accent-hi),var(--accent)); box-shadow:0 8px 22px -10px var(--glow);
     transition:transform .2s, filter .2s, background .5s ease; }
   a.book-btn:hover{ transform:translateY(-1px); filter:brightness(1.06); }
   a.book-btn:focus-visible{ outline:2px solid var(--accent-hi); outline-offset:3px; }
-  .book-alt{ font-family:var(--font-util); font-weight:300; font-size:.9rem; color:var(--muted); }
+  .book-alt{ font-family:var(--font-util); font-weight:300; font-size:1.08rem; color:var(--muted); }
   .book-alt a{ color:var(--accent-hi); text-decoration:none; transition:color .5s ease; }
   .book-alt a:hover{ text-decoration:underline; }
-  .det-tickets{ font-family:var(--font-util); font-weight:300; font-size:.86rem; color:var(--muted);
+  .det-tickets{ font-family:var(--font-util); font-weight:300; font-size:1.032rem; color:var(--muted);
     line-height:1.55; margin-top:1.6rem; max-width:48ch; margin-left:auto; margin-right:auto; }
   .det-tickets a{ color:var(--accent-hi); text-decoration:none; transition:color .5s ease; }
   .det-tickets a:hover{ text-decoration:underline; }
@@ -205,34 +217,43 @@
   /* ---------- notify ---------- */
   .notify{ width:100%; max-width:30rem; margin:clamp(2.4rem,7vw,3.4rem) auto 0; }
   .notify .lead{ font-family:var(--font-display); font-style:italic; font-weight:500;
-    font-size:clamp(1.1rem,3.8vw,1.35rem); color:var(--ivory); opacity:.92; margin-bottom:1rem; }
+    font-size:clamp(1.32rem,4.56vw,1.62rem); color:var(--ivory); opacity:.92; margin-bottom:1rem; }
   form{ display:flex; gap:.6rem; width:100%; }
   input[type=email]{
     flex:1 1 auto; min-width:0; font-family:var(--font-util); font-weight:300;
-    font-size:1rem; color:var(--ivory); background:var(--field-bg);
+    font-size:1.2rem; color:var(--ivory); background:var(--field-bg);
     border:1px solid var(--field-border); border-radius:999px; padding:.85rem 1.2rem;
     transition:border-color .3s, background .25s;
   }
   input[type=email]::placeholder{ color:rgba(244,238,224,.42); }
   input[type=email]:focus{ outline:none; border-color:var(--accent); background:rgba(255,255,255,.09); }
   button.notify-btn{
-    flex:0 0 auto; font-family:var(--font-util); font-weight:500; font-size:.92rem;
+    flex:0 0 auto; font-family:var(--font-util); font-weight:500; font-size:1.104rem;
     letter-spacing:.06em; color:#1a1420; cursor:pointer; border:0; border-radius:999px;
     padding:.85rem 1.35rem; background:linear-gradient(180deg,var(--accent-hi),var(--accent));
     box-shadow:0 8px 22px -10px var(--glow); transition:transform .2s, box-shadow .5s ease, filter .2s, background .5s ease;
   }
   button.notify-btn:hover{ transform:translateY(-1px); filter:brightness(1.06); }
   button.notify-btn:focus-visible{ outline:2px solid var(--accent-hi); outline-offset:3px; }
-  .hint{ min-height:1.2em; font-family:var(--font-util); font-weight:300; font-size:.8rem;
+  .hint{ min-height:1.2em; font-family:var(--font-util); font-weight:300; font-size:0.96rem;
     color:#F0A6B2; opacity:0; margin-top:.6rem; transition:opacity .25s; text-align:left; padding-left:1.2rem; }
   .hint.show{ opacity:1; }
   .confirm{ font-family:var(--font-display); font-style:italic; font-weight:500;
-    font-size:clamp(1.15rem,4vw,1.4rem); color:var(--accent-hi); }
+    font-size:clamp(1.38rem,4.8vw,1.68rem); color:var(--accent-hi); }
+
+  .note-star{ color:var(--accent-hi); font-style:normal; transition:color .5s ease; }
+  sup.note-star{ font-size:.62em; margin-left:.15em; }
+
+  /* ---------- contact line ---------- */
+  .contact-line{ font-family:var(--font-util); font-weight:300; font-size:clamp(1.008rem,3.6vw,1.128rem);
+    color:var(--muted); margin-top:clamp(2rem,6vw,2.8rem); }
+  .contact-line a{ color:var(--accent-hi); text-decoration:none; transition:color .5s ease; }
+  .contact-line a:hover{ text-decoration:underline; }
 
   /* ---------- footer ---------- */
   footer{
     margin-top:clamp(2.6rem,8vw,4rem);
-    font-family:var(--font-util); font-weight:300; font-size:clamp(.66rem,2.5vw,.76rem);
+    font-family:var(--font-util); font-weight:300; font-size:clamp(0.792rem,3vw,0.912rem);
     letter-spacing:.2em; text-transform:uppercase; color:var(--muted);
     display:flex; align-items:center; gap:.75rem; flex-wrap:wrap; justify-content:center;
   }
@@ -299,6 +320,7 @@
 
     <p class="cd-label" data-reveal style="--d:.24s">Until happily ever after</p>
     <div class="countdown" id="countdown" data-reveal style="--d:.28s" aria-live="off"></div>
+    <h2 class="more-soon" data-reveal style="--d:.31s"><span class="ms-line" aria-hidden="true"></span><span class="ms-text">More details to come…</span><span class="ms-line flip" aria-hidden="true"></span></h2>
 
     <section class="details" data-reveal style="--d:.34s">
       <p class="det-eyebrow">For our guests</p>
@@ -310,7 +332,7 @@
       </div>
 
       <div class="panel" id="panel-stay" role="tabpanel" aria-labelledby="tab-stay" data-tab="stay">
-        <p class="det-lede">We've reserved rooms at two Walt Disney World® Resorts at special wedding rates.</p>
+        <p class="det-lede">We've reserved rooms at two Walt Disney World® Resorts at special wedding rates.<sup class="note-star">✦</sup></p>
         <div class="resorts">
           <div class="resort"><span class="rname">Disney's Coronado Springs Resort</span><span class="rrate">$294.75<small>per night</small></span></div>
           <div class="resort"><span class="rname">Disney's All-Star Movies Resort</span><span class="rrate">$192.95<small>per night</small></span></div>
@@ -320,6 +342,7 @@
           <a class="book-btn" href="https://book.passkey.com/go/G10142487" target="_blank" rel="noopener">Book your room</a>
           <span class="book-alt">or call <a href="tel:+14078276799">(407)&nbsp;827-6799</a> · group code G10142487</span>
         </div>
+        <p class="det-tickets"><span class="note-star">✦</span> It is not required to book through our block. If you book your resort stay separately from the block, please share the reservation number with us at <a href="mailto:megandconnorforever@outlook.com">megandconnorforever@outlook.com</a> so that your stay counts toward our group and rewards.</p>
       </div>
 
       <div class="panel" id="panel-tix" role="tabpanel" aria-labelledby="tab-tix" data-tab="tix" hidden>
@@ -340,13 +363,15 @@
     </section>
 
     <section class="notify" data-reveal style="--d:.42s">
-      <p class="lead">Sign up for email announcements</p>
+      <p class="lead">Sign up for email updates and announcements</p>
       <form id="notify-form" novalidate>
         <input type="email" id="email" inputmode="email" autocomplete="email" placeholder="you@email.com" aria-label="Your email address" />
         <button class="notify-btn" type="submit">Submit</button>
       </form>
       <p class="hint" id="hint" role="alert"></p>
     </section>
+
+    <p class="contact-line" data-reveal style="--d:.4s">Please reach out to us with any wedding questions at <a href="mailto:megandconnorforever@outlook.com">megandconnorforever@outlook.com</a></p>
 
     <footer data-reveal style="--d:.44s">
       <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 21V11l3-2 2 2 3-4 3 4 2-2 3 2v10z" stroke="currentColor" stroke-width="1.2" fill="rgba(255,255,255,.06)"/><path d="M12 3v3M10.7 4.3h2.6" stroke="currentColor" stroke-width="1.2"/></svg>
